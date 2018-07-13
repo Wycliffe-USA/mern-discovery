@@ -10,12 +10,12 @@ var debug = require('debug')('mern-local-auth:server');
 var http = require('http');
 
 
-const path = require('path');
-const BROWSER = path.join(__dirname, '../.browse');
-const WWW = path.join(__dirname, '../client');
+//const path = require('path');
+//const BROWSER = path.join(__dirname, '../.browse');
+//const WWW = path.join(__dirname, '../client');
 // be sure requests and paths
 // are from WWW and not the user root.
-process.chdir(WWW);
+//process.chdir(WWW);
 
 /**
  * Get port from environment and store in Express.
@@ -92,7 +92,7 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  const child = require('child_process').spawn(
+  /*const child = require('child_process').spawn(
     BROWSER,
     [
       '--fullscreen',
@@ -102,4 +102,5 @@ function onListening() {
   );
   child.once('exit', code => process.exit(code || 0));
   process.once('exit', () => child.kill());
+  */
 }
